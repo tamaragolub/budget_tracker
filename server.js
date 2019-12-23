@@ -19,8 +19,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useFindAndModify: false
 });
 
-const databaseUrl = process.env.MONGODB_URI || "notetaker";
-const collections = ["notes"];
 
 // const db = mongojs(databaseUrl, collections);
 
