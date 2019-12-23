@@ -1,6 +1,15 @@
 let transactions = [];
 let myChart;
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then((reg) => {
+        console.log("The service worker has been registered", reg);
+      })
+  })
+}
+
 fetch("/api/transaction")
   .then(response => response.json())
   .then(data => {
